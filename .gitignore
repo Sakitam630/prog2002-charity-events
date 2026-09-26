@@ -1,0 +1,11 @@
+node_modules/
+.env
+.env.*
+!.env.example
+*.log
+coverage/
+submission/
+.runtime/
+playwright-report/
+test-results/
+PROG2002-A2-A3-需求翻译与坑点.md
