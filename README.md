@@ -2,15 +2,16 @@
 
 PROG2002 Assessment 2: charity events website.
 
-## Current delivery: Module 1
+## Current delivery: Modules 1 and 2
 
-This commit contains project structure, documentation and example configuration
-only. The database, API implementation and website pages are not delivered yet.
+Module 1 contains project structure, documentation and example configuration.
+Module 2 adds the database schema, eight sample events and import/verification guidance.
+The API implementation and website pages are not delivered yet.
 This snapshot is not a runnable website.
 
 - api/: future Node.js / Express API and MySQL connection.
 - clientside/: future HTML, CSS and JavaScript DOM pages.
-- database/: future schema and sample SQL.
+- database/: schema, sample SQL and read-only verification queries.
 - docs/: module plan and future setup/testing guidance.
 
 Required technologies: Node.js, HTML, JavaScript, DOM and MySQL.

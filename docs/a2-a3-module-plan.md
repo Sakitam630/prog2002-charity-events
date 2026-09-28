@@ -1,6 +1,6 @@
 # PROG2002 A2 module delivery plan
 
-Updated: 2026-09-26. Current scope: A2 only.
+Updated: 2026-09-28. Current scope: A2 only.
 Requirements source: E:/workplace/1/PROG2002-A2-A3-需求翻译与坑点.md (local only).
 A2 deadline: before 2026-10-11; target submission 2026-10-10.
 A3 deadline: before 2026-10-25; target submission 2026-10-24, outside this run.
@@ -24,7 +24,8 @@ Confirm the exact submission time and school timezone in the learning portal.
 Prepare one module, verify it, create one meaningful commit, and upload it only
 when the user confirms that module. Later fixes receive explicit fix commits.
 Do not upload all prepared modules together or invent past development dates.
-Module 1 is the only module in the first upload. Modules 2-8 are pending upload.
+Module 1 was uploaded separately. Module 2 now adds only database files and
+related documentation. Modules 3-8 remain pending upload.
 Existing complete local code is retained separately as reference/backup.
 
 ## Technical constraints
