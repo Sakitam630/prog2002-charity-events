@@ -2,25 +2,28 @@
 
 PROG2002 Assessment 2: charity events website.
 
-## Current delivery: Modules 1 and 2
+## Current delivery: Modules 1-3
 
 Module 1 contains project structure, documentation and example configuration.
 Module 2 adds the database schema, eight sample events and import/verification guidance.
-The API implementation and website pages are not delivered yet.
-This snapshot is not a runnable website.
+Module 3 adds the Express server, MySQL connection pool, environment configuration
+and GET /api/health database connectivity check.
+Homepage, search and detail pages and their endpoints are pending modules 4-6.
+The server is runnable, but this snapshot does not yet include website pages.
 
-- api/: future Node.js / Express API and MySQL connection.
+- api/: Node.js / Express server and MySQL connection.
 - clientside/: future HTML, CSS and JavaScript DOM pages.
 - database/: schema, sample SQL and read-only verification queries.
 - docs/: module plan and future setup/testing guidance.
 
 Required technologies: Node.js, HTML, JavaScript, DOM and MySQL.
 Database name: charityevents_db. Connection filename: event_db.js.
-The proposed API port is 3101. Database port 3307 is reserved for an isolated
-local instance; example configuration is not proof of a running service.
+Website and API share port 3101 through the same Express server.
+Database port 3307 is reserved for an isolated local instance; configure the
+actual database connection in api/.env. See api/README.md for startup instructions.
 
 See docs/a2-a3-module-plan.md for the agreed eight A2 modules.
-Complete, verify, commit and upload one module at a time after user confirmation.
+Prepare, verify, commit and upload one module at a time after user confirmation.
 Existing complete local code remains a reference/backup and is not part of this upload.
 Commit dates record actual work and must not be fabricated.
 
