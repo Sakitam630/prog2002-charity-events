@@ -26,7 +26,8 @@ when the user confirms that module. Later fixes receive explicit fix commits.
 Do not upload all prepared modules together or invent past development dates.
 Modules 1 and 2 were uploaded separately. Module 3 adds only the Express server,
 MySQL connection, health endpoint and related configuration/documentation.
-Modules 4-8 remain pending upload.
+Module 4 adds the homepage, shared navigation, responsive agenda and upcoming API.
+Modules 5-8 remain pending upload.
 Existing complete local code is retained separately as reference/backup.
 
 ## Technical constraints

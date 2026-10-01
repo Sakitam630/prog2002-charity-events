@@ -1,8 +1,8 @@
-# Server and database connection (Module 3)
+# API and server (Modules 3-4)
 
 The Express server uses event_db.js to create a MySQL connection pool.
 Configuration is loaded from api/.env, independently of the terminal's working directory.
-Both /api routes and future clientside pages use http://localhost:3101.
+Both /api routes and clientside pages use http://localhost:3101.
 The server listens on 127.0.0.1 for local development.
 
 ## Run
@@ -32,9 +32,15 @@ A database connection failure returns HTTP 503 with a generic JSON error.
 Unknown /api routes return HTTP 404 JSON. Missing pages return HTTP 404 text.
 Startup port errors are logged, and SIGINT/SIGTERM close the server and database pool.
 
-Module 3 includes static hosting for the clientside directory, but no HTML pages
-have been delivered yet: / currently returns 404. Modules 4-6 add the homepage,
-search and detail pages together with their respective GET endpoints.
+## Homepage endpoint (Module 4)
+
+GET /api/events/upcoming returns active events on or after the current Brisbane
+time, joined with category and organisation data and sorted by event time then ID.
+Past and suspended events are excluded. Timestamps include the +10:00 offset.
+The homepage at / or /index.html fetches this endpoint from the same origin and
+renders event information through the DOM, including loading, empty and error states.
+
+Search/category and detail endpoints and their pages remain pending modules 5-6.
 Registration and administration are outside A2.
 
 If port 3101 is occupied, inspect the existing process before starting another
