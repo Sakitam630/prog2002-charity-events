@@ -1,4 +1,4 @@
-# API and server (Modules 3-4)
+# API and server (Modules 3-5)
 
 The Express server uses event_db.js to create a MySQL connection pool.
 Configuration is loaded from api/.env, independently of the terminal's working directory.
@@ -40,7 +40,23 @@ Past and suspended events are excluded. Timestamps include the +10:00 offset.
 The homepage at / or /index.html fetches this endpoint from the same origin and
 renders event information through the DOM, including loading, empty and error states.
 
-Search/category and detail endpoints and their pages remain pending modules 5-6.
+## Search endpoints (Module 5)
+
+GET /api/categories returns category IDs, names and descriptions, ordered by name,
+for the search dropdown.
+
+GET /api/events/search accepts date (YYYY-MM-DD), location (substring) and
+category_id (positive integer). Filters can be used alone or combined; omitted
+or empty filters return all active events. Past active events remain searchable,
+with Past/Upcoming labels; suspended events are always excluded.
+
+Example: /api/events/search?date=2026-11-07&location=New%20Farm&category_id=1
+
+Filter values use SQL parameters. validation.js rejects impossible dates,
+invalid category IDs, overlong locations, duplicate filters and unknown query
+parameters with HTTP 400 JSON. Database failures use the existing HTTP 503 response.
+
+The detail endpoint and page remain pending module 6.
 Registration and administration are outside A2.
 
 If port 3101 is occupied, inspect the existing process before starting another

@@ -307,6 +307,37 @@ footer {
   font-size: 13px;
   color: var(--muted);
 }
+.page-title {
+  padding: 24px 0 32px;
+}
+.search-layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 48px;
+}
+.search-layout aside {
+  border-right: 1px solid var(--line);
+  padding-right: 24px;
+}
+.search-layout aside h2 {
+  font-size: 22px;
+}
+.search-layout .event-row {
+  grid-template-columns: 60px minmax(0, 1fr) 78px;
+  gap: 20px;
+}
+.search-layout .event-image {
+  display: none;
+}
+.search-layout .event-copy h3 {
+  font-size: 21px;
+}
+label {
+  display: block;
+  margin: 20px 0 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
 input,
 select {
   width: 100%;
@@ -321,6 +352,16 @@ select {
 form .button {
   margin-top: 20px;
 }
+.clear {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: var(--green);
+  text-decoration: underline;
+  min-height: 44px;
+  margin-top: 8px;
+}
 .error {
   color: #9c2348;
 }
@@ -331,6 +372,9 @@ form .button {
 }
 #status:not(:empty) {
   padding: 10px 0;
+}
+#category-status {
+  font-size: 13px;
 }
 .empty {
   padding: 32px 0;
@@ -351,6 +395,16 @@ form .button {
   }
   .event-actions strong {
     margin: 0;
+  }
+  .search-layout {
+    gap: 24px;
+    grid-template-columns: 200px minmax(0, 1fr);
+  }
+  .search-layout .event-row {
+    grid-template-columns: 50px minmax(0, 1fr);
+  }
+  .search-layout .event-actions {
+    grid-column: 2;
   }
 }
 @media (max-width: 600px) {
@@ -426,10 +480,31 @@ form .button {
   .mission h2 {
     font-size: 30px;
   }
+  .search-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .search-layout aside {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 0 0 20px;
+  }
+  .search-layout form .button {
+    width: 100%;
+  }
+  .search-layout .event-row {
+    grid-template-columns: 46px minmax(0, 1fr);
+  }
+  .search-layout .date-tile {
+    grid-row: auto;
+  }
   footer {
     padding: 24px 20px;
     flex-direction: column;
     gap: 8px;
+  }
+  .page-title {
+    padding-bottom: 24px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

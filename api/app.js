@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('node:path');
+const { searchFilters } = require('./validation');
 
 const selectEvents = `SELECT e.*, c.name AS category_name,
   o.name AS organisation_name, o.contact_email, o.contact_phone,
@@ -21,10 +22,34 @@ function createApp(db) {
     await db.query('SELECT 1');
     res.json({ status: 'ok', database: 'connected' });
   }));
+  app.get('/api/categories', route(async (_req, res) => {
+    const [rows] = await db.execute('SELECT category_id, name, description FROM categories ORDER BY name');
+    res.json(rows);
+  }));
   app.get('/api/events/upcoming', route(async (_req, res) => {
     const [rows] = await db.execute(`${selectEvents}
       WHERE e.status = 'active' AND e.event_datetime >= UTC_TIMESTAMP() + INTERVAL 10 HOUR
       ORDER BY e.event_datetime, e.event_id`);
+    res.json(rows.map(serialise));
+  }));
+  app.get('/api/events/search', route(async (req, res) => {
+    const filters = searchFilters(req.query);
+    const conditions = ["e.status = 'active'"];
+    const parameters = [];
+    if (filters.date) {
+      conditions.push('e.event_datetime >= ? AND e.event_datetime < DATE_ADD(?, INTERVAL 1 DAY)');
+      parameters.push(filters.date, filters.date);
+    }
+    if (filters.location) {
+      conditions.push('LOCATE(?, e.location) > 0');
+      parameters.push(filters.location);
+    }
+    if (filters.category_id) {
+      conditions.push('e.category_id = ?');
+      parameters.push(filters.category_id);
+    }
+    const [rows] = await db.execute(`${selectEvents} WHERE ${conditions.join(' AND ')}
+      ORDER BY e.event_datetime, e.event_id`, parameters);
     res.json(rows.map(serialise));
   }));
   app.use('/api', (_req, res) => res.status(404).json({ error: 'API endpoint not found.' }));

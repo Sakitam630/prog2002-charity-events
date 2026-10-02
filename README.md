@@ -2,7 +2,7 @@
 
 PROG2002 Assessment 2: charity events website.
 
-## Current delivery: Modules 1-4
+## Current delivery: Modules 1-5
 
 Module 1 contains project structure, documentation and example configuration.
 Module 2 adds the database schema, eight sample events and import/verification guidance.
@@ -11,11 +11,13 @@ and GET /api/health database connectivity check.
 Module 4 adds the homepage, shared navigation and responsive agenda, plus
 GET /api/events/upcoming for active upcoming events from MySQL.
 Open http://localhost:3101 after configuring and starting the API.
-Search and detail links are retained for modules 5-6; their pages and endpoints
-are not included yet and currently return 404.
+Module 5 adds search.html with date, location and category filters, Clear Filters,
+input validation, and GET /api/categories and /api/events/search.
+Event detail links are retained for module 6; the detail page and endpoint are
+not included yet and currently return 404.
 
 - api/: Node.js / Express server and MySQL connection.
-- clientside/: homepage HTML, CSS and JavaScript DOM rendering.
+- clientside/: homepage and search HTML, CSS and JavaScript DOM rendering.
 - database/: schema, sample SQL and read-only verification queries.
 - docs/: module plan and future setup/testing guidance.
 
