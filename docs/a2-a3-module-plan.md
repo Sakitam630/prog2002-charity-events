@@ -1,6 +1,6 @@
 # PROG2002 A2 module delivery plan
 
-Updated: 2026-10-02. Current scope: A2 only.
+Updated: 2026-10-03. Current scope: A2 only.
 Requirements source: E:/workplace/1/PROG2002-A2-A3-需求翻译与坑点.md (local only).
 A2 deadline: before 2026-10-11; target submission 2026-10-10.
 A3 deadline: before 2026-10-25; target submission 2026-10-24, outside this run.
@@ -28,7 +28,8 @@ Modules 1 and 2 were uploaded separately. Module 3 adds only the Express server,
 MySQL connection, health endpoint and related configuration/documentation.
 Module 4 adds the homepage, shared navigation, responsive agenda and upcoming API.
 Module 5 adds the search page, category/search APIs, filter validation and styles.
-Modules 6-8 remain pending upload.
+Module 6 adds the detail page/API, fundraising display and Register placeholder.
+Modules 7-8 remain pending upload.
 Existing complete local code is retained separately as reference/backup.
 
 ## Technical constraints

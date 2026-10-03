@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('node:path');
-const { searchFilters } = require('./validation');
+const { positiveId, searchFilters } = require('./validation');
 
 const selectEvents = `SELECT e.*, c.name AS category_name,
   o.name AS organisation_name, o.contact_email, o.contact_phone,
@@ -51,6 +51,12 @@ function createApp(db) {
     const [rows] = await db.execute(`${selectEvents} WHERE ${conditions.join(' AND ')}
       ORDER BY e.event_datetime, e.event_id`, parameters);
     res.json(rows.map(serialise));
+  }));
+  app.get('/api/events/:id', route(async (req, res) => {
+    const id = positiveId(req.params.id);
+    const [rows] = await db.execute(`${selectEvents} WHERE e.event_id = ? AND e.status = 'active'`, [id]);
+    if (!rows.length) return res.status(404).json({ error: 'This event is unavailable.' });
+    res.json(serialise(rows[0]));
   }));
   app.use('/api', (_req, res) => res.status(404).json({ error: 'API endpoint not found.' }));
   app.use(express.static(path.join(__dirname, '..', 'clientside')));

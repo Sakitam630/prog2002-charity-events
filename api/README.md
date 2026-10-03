@@ -1,4 +1,4 @@
-# API and server (Modules 3-5)
+# API and server (Modules 3-6)
 
 The Express server uses event_db.js to create a MySQL connection pool.
 Configuration is loaded from api/.env, independently of the terminal's working directory.
@@ -56,7 +56,19 @@ Filter values use SQL parameters. validation.js rejects impossible dates,
 invalid category IDs, overlong locations, duplicate filters and unknown query
 parameters with HTTP 400 JSON. Database failures use the existing HTTP 503 response.
 
-The detail endpoint and page remain pending module 6.
+## Event detail endpoint (Module 6)
+
+GET /api/events/:id returns one active event with its category and organisation,
+full description, purpose, location, date/time, ticket price, fundraising goal
+and current progress. Past active events remain viewable and are labelled past.
+
+The ID is validated with positiveId and bound as a SQL parameter. Malformed or
+out-of-range IDs return HTTP 400. Missing and suspended events return HTTP 404
+with {"error":"This event is unavailable."}. Database failures return HTTP 503.
+
+The frontend reads id from the detail.html URL and fetches this same-origin API.
+Register only displays "This feature is currently under construction." as required
+for A2; it does not create a registration or purchase.
 Registration and administration are outside A2.
 
 If port 3101 is occupied, inspect the existing process before starting another
