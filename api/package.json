@@ -5,7 +5,9 @@
   "description": "PROG2002 A2 charity event browsing API",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "node --test",
+    "test:browser": "node scripts/browser-check.js"
   },
   "engines": {
     "node": ">=20"
@@ -14,5 +16,8 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "mysql2": "^3.12.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0"
   }
 }

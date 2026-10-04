@@ -2,7 +2,7 @@
 
 PROG2002 Assessment 2: charity events website.
 
-## Current delivery: Modules 1-6
+## Current delivery: Modules 1-7
 
 Module 1 contains project structure, documentation and example configuration.
 Module 2 adds the database schema, eight sample events and import/verification guidance.
@@ -15,12 +15,15 @@ Module 5 adds search.html with date, location and category filters, Clear Filter
 input validation, and GET /api/categories and /api/events/search.
 Module 6 adds detail.html and GET /api/events/:id, including complete event
 information, ticket prices, fundraising goal/progress and the A2 Register alert.
-The homepage, search and event details are now linked. Modules 7-8 remain pending.
+The homepage, search and event details are now linked.
+Module 7 adds automated API/validation tests, browser workflow checks and a current
+verification record. Run npm test and npm run test:browser from api/; see
+docs/a2-verification.md for prerequisites and results. Module 8 remains pending.
 
 - api/: Node.js / Express server and MySQL connection.
 - clientside/: homepage, search and detail HTML, CSS and JavaScript DOM rendering.
 - database/: schema, sample SQL and read-only verification queries.
-- docs/: module plan and future setup/testing guidance.
+- docs/: module plan, image sources and verification record; delivery preparation pending.
 
 Required technologies: Node.js, HTML, JavaScript, DOM and MySQL.
 Database name: charityevents_db. Connection filename: event_db.js.

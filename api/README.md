@@ -1,4 +1,4 @@
-# API and server (Modules 3-6)
+# API and server (Modules 3-7)
 
 The Express server uses event_db.js to create a MySQL connection pool.
 Configuration is loaded from api/.env, independently of the terminal's working directory.
@@ -73,3 +73,16 @@ Registration and administration are outside A2.
 
 If port 3101 is occupied, inspect the existing process before starting another
 server. Do not change the agreed port or stop unrelated applications.
+
+## Tests (Module 7)
+
+After npm ci, run npm test from api/ for seven API/validation tests. They start
+temporary loopback servers with database stubs and do not require MySQL.
+
+Run npm run test:browser against the running sample application on port 3101.
+Microsoft Edge and the development dependencies are required. The browser checks
+cover navigation, responsive layouts, filtering, empty/error results and the A2
+Register placeholder. TEST_URL can target an explicitly started isolated test
+instance. The script does not start the server and expects the original sample
+data and assessment-period dates. See ../docs/a2-verification.md for current
+results, test assumptions and reproduction details.
