@@ -197,7 +197,7 @@ See the [verification record](docs/a2-verification.md) for the earlier 2026-09-2
 - [Image sources](docs/image-sources.md)
 - [Verification record](docs/a2-verification.md)
 - [Delivery checklist](docs/a2-delivery-checklist.md)
-- [A2/A3 module plan and schedule](docs/a2-a3-module-plan.md)
+- [A2模块划分](docs/a2-a3-module-plan.md)
 
 This README was revised with OpenAI Codex assistance, using the repository's source files, existing documentation and the test runs described above. This statement covers the README revision; it is not a complete declaration of AI use elsewhere in the project. The assessed submission should accurately acknowledge any additional AI assistance in accordance with the course's rules.
 
