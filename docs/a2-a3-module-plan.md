@@ -1,11 +1,5 @@
 # PROG2002 A2 module delivery plan
 
-Updated: 2026-10-04. Current scope: A2 only.
-Requirements source: E:/workplace/1/PROG2002-A2-A3-需求翻译与坑点.md (local only).
-A2 deadline: before 2026-10-11; target submission 2026-10-10.
-A3 deadline: before 2026-10-25; target submission 2026-10-24, outside this run.
-Confirm the exact submission time and school timezone in the learning portal.
-
 ## Agreed modules
 
 | Module | Scope | Acceptance |
