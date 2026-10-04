@@ -24,13 +24,13 @@ Express serves the website and API from the same origin. No frontend build step 
 ```text
 project/
 ├── api/                    # Express application, database connection and tests
-│   ├── scripts/            # Local database setup and browser checks
+│   ├── scripts/            # Browser checks
 │   ├── test/               # API and input-validation tests
 │   └── .env.example        # Configuration template; no real password
 ├── clientside/             # HTML pages and shared CSS/JavaScript assets
 ├── database/               # Fresh-install SQL schema and sample data
 ├── docs/                   # Setup, API reference, image sources and verification
-├── scripts/                # Local startup helper
+├── scripts/                # Source packaging helper
 └── README.md
 ```
 
@@ -129,7 +129,7 @@ Expected health response:
 
 Open the website through HTTP, not by opening the HTML files with `file://`; the frontend uses relative `/api` URLs. If `localhost` does not resolve to the listening interface, use `http://127.0.0.1:3101/`.
 
-For the original computer's isolated-database startup helper and troubleshooting, see [local setup](docs/local-setup.md). That helper assumes the local database has already been initialized and is not a fresh-install substitute.
+See [local setup](docs/local-setup.md) for portable installation, archive extraction and troubleshooting. The original computer also has a machine-specific startup helper in the complete reference project; it is not included or required in this repository.
 
 ## API endpoints
 
@@ -167,7 +167,7 @@ Start the application and database first, keep the original sample data availabl
 node scripts/browser-check.js
 ```
 
-The current `package.json` does not define `test:browser`, so `npm run test:browser` is not available. The command above runs the existing Playwright checks directly.
+You can also run `npm run test:browser`; it invokes the same Playwright script.
 
 The checks use `http://127.0.0.1:3101` by default; set `TEST_URL` to test another running address. They cover the three pages at widths of 1440, 390 and 320 pixels, combined search, Clear Filters, empty/error states, free admission, suspended events and the Register notice. Screenshots are saved under `.runtime/screenshots/`.
 
@@ -181,7 +181,7 @@ On **2026-10-04**, using Node.js **v24.10.0**, the existing local database and M
 - `/api/health`: returned `status: ok` and `database: connected`.
 - `node scripts/browser-check.js`: completed successfully at all three viewport widths, with no horizontal document overflow or browser JavaScript exceptions detected by the script. The inspected event images loaded during this run.
 
-See the [verification record](docs/a2-verification.md) for the earlier 2026-09-26 checks and outstanding student deliverables. Automated checks cover the listed scenarios, not every possible browser or user interaction.
+See the [verification record](docs/a2-verification.md) for the 2026-10-04 staged-delivery checks, reproduction steps and test limitations. Automated checks cover the listed scenarios, not every possible browser or user interaction.
 
 ## Scope and limitations
 
@@ -201,4 +201,4 @@ See the [verification record](docs/a2-verification.md) for the earlier 2026-09-2
 
 This README was revised with OpenAI Codex assistance, using the repository's source files, existing documentation and the test runs described above. This statement covers the README revision; it is not a complete declaration of AI use elsewhere in the project. The assessed submission should accurately acknowledge any additional AI assistance in accordance with the course's rules.
 
-Module planning remains in the linked plan. The course report, demonstration video, marker access and final submission are separate deliverables; passing the application checks does not mean those tasks are complete.
+Source packages can be reproduced with `scripts/package-a2.ps1`; see the [delivery checklist](docs/a2-delivery-checklist.md). Module planning remains in the linked plan. The course report, demonstration video, marker access and final submission are separate deliverables; passing the application checks does not mean those tasks are complete.

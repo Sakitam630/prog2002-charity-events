@@ -24,7 +24,10 @@ Module 4 adds the homepage, shared navigation, responsive agenda and upcoming AP
 Module 5 adds the search page, category/search APIs, filter validation and styles.
 Module 6 adds the detail page/API, fundraising display and Register placeholder.
 Module 7 adds API/validation tests, browser workflow checks and verification evidence.
-Module 8 remains pending upload.
+Module 8 adds portable setup/API documentation, delivery and video checklists,
+allowlisted source packaging and package verification.
+Reports and videos are submitted separately by the student; marker access and
+learning-portal submission remain student actions.
 Existing complete local code is retained separately as reference/backup.
 
 ## Technical constraints
